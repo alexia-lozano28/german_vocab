@@ -26,7 +26,8 @@ def index():
             result = "✅ Correcto!"
         else:
             result = f"❌ Incorrecto. La respuesta correcta es: {correct_answer}"
-
+            
+    word = random.choice(words)
     return render_template("index.html", word=word, result=result)
 
 if __name__ == "__main__":
