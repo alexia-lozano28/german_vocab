@@ -6,7 +6,7 @@ import os
 app = Flask(__name__)
 
 # Cargar Excel
-df = pd.read_excel("palabras.xlsx")
+df = pd.read_excel("words.xlsx")
 words = df.to_dict(orient="records")
 
 @app.route("/", methods=["GET", "POST"])
