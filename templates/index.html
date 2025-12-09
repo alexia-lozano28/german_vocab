@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
   <body style="font-family:sans-serif;">
-    <h1>Práctica de alemán</h1>
+    <h2>Práctica de alemán</h2>
 
     {% if result %}
-      <p><strong>Resultado:</strong> {{ result }}</p>
+      <p><strong>Result:</strong> {{ result }}</p>
     {% endif %}
 
     <form method="POST">
-      <p>Traduce: <strong>{{ word.German }}</strong></p>
+      <p>Translate: <strong>{{ word.German }}</strong></p>
       <input type="text" name="answer" autofocus />
       <input type="hidden" name="german" value="{{ word.German }}">
       <input type="hidden" name="correct" value="{{ word.English }}">
-      <button type="submit">Comprobar</button>
+      <button type="submit">Check</button>
     </form>
   </body>
 </html>

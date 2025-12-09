@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mistakes</title>
+</head>
+<body>
+    <h1>❌ Mistakes Log</h1>
+
+    {% if fallos %}
+        <ul>
+            {% for f in fallos %}
+                <li>
+                    <strong>{{ f["Shown word"] }}</strong> → {{ f["Correct answer"] }}
+                    (You answered: {{ f["Your answer"] }} | Mode: {{ f["Mode"] }})
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No mistakes yet! 🎉</p>
+    {% endif %}
+
+    <a href="/">⬅ Back</a>
+
+</body>
+</html>

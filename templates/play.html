@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Play</title>
+</head>
+<body>
+
+    <h2>Mode: {{ mode }}</h2>
+    <h3>Type: {{ selected_type }}</h3>
+    <h3>Kapitel: {{ selected_chapter }}</h3>
+
+    {% if result %}
+        <p>{{ result }}</p>
+    {% endif %}
+
+    <form method="POST">
+        <p><strong>Translate:</strong> {{ shown_word }}</p>
+
+        <input type="text" name="answer" autocomplete="off" required>
+
+        <input type="hidden" name="correct" value="{{ correct_answer }}">
+        <input type="hidden" name="shown_word" value="{{ shown_word }}">
+        <input type="hidden" name="selected_type" value="{{ selected_type }}">
+        <input type="hidden" name="selected_chapter" value="{{ selected_chapter }}">
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <br>
+    <a href="/">⬅ Back</a>
+
+</body>
+</html>

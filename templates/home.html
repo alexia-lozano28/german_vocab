@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>German Practice</title>
+</head>
+<body>
+    <h1>🇩🇪 German Practice App</h1>
+
+    <h3>Select word type:</h3>
+    <select id="typeSelect">
+        {% for t in types %}
+            <option value="{{ t }}">{{ t }}</option>
+        {% endfor %}
+    </select>
+
+    <h3>Select Kapitel:</h3>
+    <select id="chapterSelect">
+        {% for c in chapters %}
+            <option value="{{ c }}">{{ c }}</option>
+        {% endfor %}
+    </select>
+
+    <h3>Choose test mode:</h3>
+    <button onclick="goTo('de-en')">German → English</button>
+    <button onclick="goTo('en-de')">English → German</button>
+
+    <script>
+        function goTo(mode) {
+            const type = document.getElementById("typeSelect").value;
+            const chapter = document.getElementById("chapterSelect").value;
+
+            window.location.href = `/play/${mode}?type=${type}&chapter=${chapter}`;
+        }
+    </script>
+
+</body>
+</html>
